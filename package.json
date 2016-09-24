@@ -1,0 +1,28 @@
+{
+  "name": "reactjs-example",
+  "version": "4.0.0",
+  "description": "Example for kick starting a React Project with ES6 (Babel) and Hot reloader using Webpack.",
+  "main": "",
+  "scripts": {
+    "start": "node server/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/WebClouder/ReactJs.git"
+  },
+  "keywords": [
+    "react",
+    "es6",
+    "express",
+    "babel",
+    "webpack"
+  ],
+  "author": "Yoya",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/WebClouder/ReactJs/issues"
+  },
+  "homepage": "https://github.com/WebClouder/ReactJs",
+  "dependencies": {},
+  "devDependencies": {}
+}

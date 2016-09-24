@@ -1,0 +1,4 @@
+export const MESSAGE_ERROR = 'MESSAGE_ERROR';
+export const VALIDATION_ERROR = 'VALIDATION_ERROR';
+export const SERVER_ERROR = 'SERVER_ERROR';
+export const CLEAR_ERRORS = 'CLEAR_ERRORS';

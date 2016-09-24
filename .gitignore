@@ -1,0 +1,6 @@
+npm-debug.log
+node_modules
+server/node_modules
+*.iml
+public
+launch.json
