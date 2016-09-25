@@ -1,11 +1,14 @@
 # ReactJs-Example
 
-It's a example with ReactJs + Redux + webpack + express.
-you could learn HOW TO:
-1. build the project in webpack.
-2. develop components in React + Redux.
-3. handle the asynchronous reqeust/response in Redux
-4. use the React router.
+It's a example with ReactJs + Redux + Webpack + Express.   
+you could learn HOW TO:   
+```
+* build the project in Webpack.  
+* develop components in React + Redux.  
+* handle the asynchronous reqeust/response in Redux.  
+* use the React router.  
+* interage the Webpack Hotspot into Express.   
+```
 
 Install
 ===
