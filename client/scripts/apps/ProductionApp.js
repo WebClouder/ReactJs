@@ -20,8 +20,8 @@ class App extends Component {
 function mapStateToProps(state) {
 	if(!state.tabs.length){
 		let tabs = [
-			{title:'产品购买',to:'/productions/form',active:true},
-			{title:'已购买产品',to:'/productions/search',active:false}
+			{title:'产品创建',to:'/productions/form',active:true},
+			{title:'产品目录',to:'/productions/search',active:false}
 		];
 		state.tabs = tabs;
 		return {tabs: tabs};

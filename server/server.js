@@ -97,10 +97,7 @@ var controllers = {
         isSuccess:false,
         // successMessage:'已成功创建车辆信息!'
         validationMessages: {
-          'name': '已存在同名用户',
-          'plate_id': '拍照格式不正确',
-          'phone': '电话号码格式不规范',
-          'date': '日期格式错误',
+          'name': '已存在同名产品'
         }
       });
     },

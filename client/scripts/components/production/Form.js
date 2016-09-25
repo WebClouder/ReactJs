@@ -22,7 +22,7 @@ export default class Form extends Component {
                     <Text ref="id" name="id" hidden={true} value={this.props.data.id}/>
                     <div className="row">
                         <Text 
-                            title="购买者姓名"
+                            title="产品名称"
                             ref="name"  
                             value={this.props.data.name}
                             error={this.props.errors.name}
@@ -30,45 +30,45 @@ export default class Form extends Component {
                     </div>
                     <div className="row">
                         <Text
-                            title="购买者ID"
-                            ref="personId"
-                            value={this.props.data.personId}
-                            emptyString="必须为身份证／护照／驾照号码"
-                            error={this.props.errors.personId}
+                            title="研发序号"
+                            ref="code"
+                            value={this.props.data.code}
+                            emptyString="必须为研发部门注册的12位序号"
+                            error={this.props.errors.code}
+                        />
+                    </div>
+                    <div className="row">
+                        <Dropdown
+                            title="产品负责人"
+                            ref="pManagerId"
+                            width="255px"
+                            emptyString="请选择..." 
+                            valueField="pManagerId"
+                            displayValueField="pManagerName"
                         />
                     </div>
                     <div className="row">
                         <Text
-                            title="手机号码"
-                            ref="phone"
-                            value={this.props.data.phone}
+                            title="产品负责人号码"
+                            ref="pManagerPhone"
+                            value={this.props.data.pManagerPhone}
                             emptyString="请输入正确11位手机号"
-                            error={this.props.errors.phone}
+                            error={this.props.errors.pManagerPhone}
                         />
                     </div>
                     <div className="row">
                         <Dropdown
                             title="产品类别"
-                            ref="productionType"
+                            ref="typeId"
                             width="255px"
                             emptyString="请选择..." 
-                            valueField="productionTypeId"
-                            displayValueField="productionType"
-                        />
-                    </div>
-                    <div className="row">
-                        <Dropdown
-                            title="产品名称"
-                            ref="productionName"
-                            width="255px"
-                            emptyString="请选择..."
-                            valueField="productionId"
-                            displayValueField="productionName"
+                            valueField="typeId"
+                            displayValueField="type"
                         />
                     </div>
                     <div className="row">
                         <DatePicker
-                            title="购买日期"
+                            title="发售日期"
                             ref="date"
                             name="date"
                             value={this.props.data.date}

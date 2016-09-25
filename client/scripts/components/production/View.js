@@ -63,7 +63,7 @@ class View extends Component {
 					errors={this.props.errors}/>
                 <Tools 
 					ref='tools'
-					searchEmptyString="车牌/电话/姓名"
+					searchEmptyString="最少输入2个字符"
 					onEdit={this.openModal.bind(this)}
 					onDelete={this.delete.bind(this)}
 					onSearch={this.search.bind(this)}
@@ -75,15 +75,13 @@ class View extends Component {
 					totalSize={this.props.totalSize}
 					onPageChange={this.onPageChange.bind(this)}
 				>
-                    <TableHeaderColumn dataField="name" dataSort={false}>姓名</TableHeaderColumn>
-                    <TableHeaderColumn dataField="personId" dataSort={false}>证件号码</TableHeaderColumn>
-					<TableHeaderColumn dataField="productionId" dataSort={false}>产品凭证</TableHeaderColumn>
-					<TableHeaderColumn dataField="productionName" dataSort={false}>产品名称</TableHeaderColumn>
-					<TableHeaderColumn dataField="productionType" dataSort={false}>产品类别</TableHeaderColumn>
-					<TableHeaderColumn dataField="productionPrice" dataSort={false}>产品价格</TableHeaderColumn>
-                    <TableHeaderColumn dataField="phone" dataSort={false}>联系方式</TableHeaderColumn>
-                    <TableHeaderColumn dataField="date" dataSort={false}>购买时间</TableHeaderColumn>
-                    <TableHeaderColumn isKey={true} dataField="id" hidden={true}>id</TableHeaderColumn>
+                    <TableHeaderColumn dataField="name" dataSort={false}>产品名称</TableHeaderColumn>
+                    <TableHeaderColumn dataField="id" isKey={true} dataSort={false}>产品编号</TableHeaderColumn>
+					<TableHeaderColumn dataField="code" dataSort={false}>研发序号</TableHeaderColumn>
+					<TableHeaderColumn dataField="pManagerName" dataSort={false}>产品负责人</TableHeaderColumn>
+					<TableHeaderColumn dataField="pManagerPhone" dataSort={false}>产品负责人电话</TableHeaderColumn>
+					<TableHeaderColumn dataField="type" dataSort={false}>产品类别</TableHeaderColumn>
+                    <TableHeaderColumn dataField="date" dataSort={false}>发售日期</TableHeaderColumn>
                 </Table>
             </div>
 		);
