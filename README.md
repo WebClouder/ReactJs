@@ -28,7 +28,7 @@ cd ReactJs
 npm start
 ```
 
-open it in brower at http://localhost:5000
+open it in brower at http://localhost:5000/productions
 
 Build js
 ===
