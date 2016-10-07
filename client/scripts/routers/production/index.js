@@ -1,15 +1,15 @@
 // import ProductionApp from '../../apps/ProductionApp';
-import formRouter from './form';
-import viewRouter from './view';
+// import formRouter from './form';
+// import viewRouter from './view';
 export default {
   path: 'productions',
   getComponent(nextState, cb) {
     require.ensure([], (require) => {
-            cb(null, require('../../apps/ProductionApp').default)
-        })
+        cb(null, require('../../apps/ProductionApp').default)
+    }, 'prod_root')
   },
   childRoutes: [
-      formRouter,
-      viewRouter
+      require('./form').default,
+      require('./view').default
   ]
 }

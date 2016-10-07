@@ -43,18 +43,41 @@ var webpack = require('webpack');
 var path = require('path');
 
 module.exports = {
-  entry: './scripts/index',
+  // entry: './scripts/index',
+  // output: {
+  //   path: path.join( __dirname, 'dist'),
+  //   filename: 'bundle.min.js',
+  //   publicPath: '/'
+  // },
+  entry: {
+    prodPage: './scripts/index',
+    commons: [
+      'redux',
+      'react', 
+      'react-redux', 
+      'react-router',
+      './scripts/components/Table',
+      './scripts/components/production/CreationPage'
+    ]
+  },
   output: {
     path: path.join( __dirname, 'dist'),
-    filename: 'bundle.min.js',
-    publicPath: '/'
+    filename: '[name].js',
+    chunkFilename: '[name].chunk.js',
+    publicPath: '/',
   },
   resolve: {
     extensions: ['', '.js']
   },
   devtool: 'source-map',
   plugins: [
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'commons',
+      filename: 'commons.js',
+      // minChunks: 2
+    }),
     new webpack.optimize.OccurenceOrderPlugin(),
+    new webpack.optimize.DedupePlugin(),
     new webpack.DefinePlugin({
       'process.env': {
         'NODE_ENV': JSON.stringify('production')

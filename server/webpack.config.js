@@ -54,24 +54,28 @@ module.exports = {
     'hot-middleware': 'webpack-hot-middleware/client',
     'dev-server': 'webpack/hot/dev-server',
     prodPage: '../client/scripts/index',
+    commons: [
+      '../client/scripts/components/Table',
+      '../client/scripts/components/production/CreationPage'
+    ]
   },
   output: {
     path: __dirname,
     filename: '[name].js',
+    chunkFilename: '[name].chunk.js',
     publicPath: '/static/',
   },
   plugins: [
     new webpack.optimize.CommonsChunkPlugin({
       name: 'commons',
       filename: 'commons.js',
-      minChunks: 2
     }),
     new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin()
   ],
   resolve: {
-    extensions: ['', '.js']
+    extensions: ['', '.js'],
   },
   devtool: 'source-map',
   module: {

@@ -1,16 +1,15 @@
-// import MainApp from '../apps/MainApp';
-import productionRouter from '../routers/production';
+// import productionRouter from '../routers/production';
 
 export default {
     getComponent(nextState, cb) {
         require.ensure([], (require) => {
             cb(null, require('../apps/MainApp').default)
-        })
+        }, 'main_app')
     },
     childRoutes: [{
             path: '/',
             childRoutes: [
-                productionRouter
+                require('../routers/production').default
             ]
     }]
 };
