@@ -1,7 +1,8 @@
-import CreationPage from '../../components/production/CreationPage';
 export default {
   path: 'form',
   getComponent(nextState, cb) {
-    cb(null, CreationPage);
+    require.ensure([], (require) => {
+      cb(null, require('../../components/production/CreationPage').default)
+    })
   }
 }

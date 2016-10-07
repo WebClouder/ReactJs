@@ -50,20 +50,27 @@ module.exports = {
     'webpack/hot/dev-server',
     '../client/scripts/index'
   ],
+  // entry: {
+  //   'hot-middleware': 'webpack-hot-middleware/client',
+  //   'dev-server': 'webpack/hot/dev-server',
+  //   main: '../client/scripts/index',
+  //   producionView: '../client/scripts/components/production/View'
+  // },
   output: {
     path: __dirname,
     filename: 'bundle.js',
-    publicPath: '/static/'
+    publicPath: '/static/',
   },
-  resolve: {
-    extensions: ['', '.js']
-  },
-  devtool: 'source-map',
   plugins: [
+    new webpack.optimize.CommonsChunkPlugin("init.js"),
     new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin()
   ],
+  resolve: {
+    extensions: ['', '.js']
+  },
+  devtool: 'source-map',
   module: {
     loaders: [
       {
