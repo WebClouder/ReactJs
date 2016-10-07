@@ -45,24 +45,27 @@ var webpack = require('webpack');
 var path = require('path');
 
 module.exports = {
-  entry: [
-    'webpack-hot-middleware/client',
-    'webpack/hot/dev-server',
-    '../client/scripts/index'
-  ],
-  // entry: {
-  //   'hot-middleware': 'webpack-hot-middleware/client',
-  //   'dev-server': 'webpack/hot/dev-server',
-  //   main: '../client/scripts/index',
-  //   producionView: '../client/scripts/components/production/View'
-  // },
+  // entry: [
+  //   'webpack-hot-middleware/client',
+  //   'webpack/hot/dev-server',
+  //   '../client/scripts/index'
+  // ],
+  entry: {
+    'hot-middleware': 'webpack-hot-middleware/client',
+    'dev-server': 'webpack/hot/dev-server',
+    prodPage: '../client/scripts/index',
+  },
   output: {
     path: __dirname,
-    filename: 'bundle.js',
+    filename: '[name].js',
     publicPath: '/static/',
   },
   plugins: [
-    new webpack.optimize.CommonsChunkPlugin("init.js"),
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'commons',
+      filename: 'commons.js',
+      minChunks: 2
+    }),
     new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin()
