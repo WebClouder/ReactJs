@@ -3,6 +3,7 @@ var express = require('express'),
 	  app = express(),
 	  bodyParser = require('body-parser'),
     cookieParser = require('cookie-parser'),
+    compression = require('compression'),
     methodOverride = require('method-override'),
 	  webpack = require('webpack'),
 	  WebpackDevServer = require('webpack-dev-server'),
@@ -39,8 +40,18 @@ if (process.env.NODE_ENV !== 'production') {
 app.use(methodOverride());
 app.use(cookieParser());
 app.use(bodyParser.json());
+app.use(compression({filter: shouldCompress}));
 app.use(express.static(path.join(__dirname, 'public')));
 
+function shouldCompress(req, res) {
+  if (req.headers['x-no-compression']) {
+    // don't compress responses with this request header
+    return false
+  }
+
+  // fallback to standard filter function
+  return compression.filter(req, res)
+}
 
 /** app routers */
 var controllers = {

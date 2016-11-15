@@ -4,7 +4,7 @@
   "description": "Example for kick starting a React Project with ES6 (Babel) and Hot reloader using Webpack.",
   "main": "index.js",
   "scripts": {
-    "build": "BABEL_ENV=production ./node_modules/.bin/webpack --config webpack.config.production.js",
+    "build": "BABEL_ENV=production ./node_modules/.bin/webpack --config webpack.config.production.js --colors --display-modules --profile",
     "lint": "./node_modules/.bin/eslint ."
   },
   "repository": {

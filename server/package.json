@@ -27,6 +27,7 @@
   "dependencies": {},
   "devDependencies": {
     "body-parser": "^1.15.2",
+    "compression": "^1.6.2",
     "cookie-parser": "^1.4.3",
     "eslint": "^0.21.2",
     "eslint-plugin-react": "^2.3.0",
